@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class DiceRoller extends StatefulWidget {
-  const DiceRoller({super.key})
+  const DiceRoller({super.key});
 
   @override
   State<DiceRoller> createState() {
@@ -13,7 +13,9 @@ class _DiceRollerState extends State<DiceRoller> {
   var activeDiceImage = 'assets/images/dice-2.png';
 
   void rollDice() {
-    activeDiceImage = 'assets/images/dice-4.png';
+    setState(() {
+      activeDiceImage = 'assets/images/dice-4.png';
+    });
   }
 
   @override
@@ -26,7 +28,7 @@ class _DiceRollerState extends State<DiceRoller> {
           width: 200,
         ),
         TextButton(
-          onPressed: () {},
+          onPressed: rollDice,
           style: TextButton.styleFrom(
             padding: const EdgeInsets.only(
               top: 20,
